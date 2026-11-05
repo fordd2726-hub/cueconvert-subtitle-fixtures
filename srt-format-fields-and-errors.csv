@@ -1,0 +1,11 @@
+"Problem","Bad content","Observed result"
+"Cue number","1","Sequential cue identifier before its timing line"
+"Start and end timecodes","00:00:01,000 --> 00:00:02,500","Start and end on one line; comma before milliseconds"
+"Subtitle text","Hello.","Visible caption text follows the timecodes"
+"Blank separator","[empty line]","Separates this cue from the next numbered cue"
+"Complete cue","1\n00:00:01,000 --> 00:00:02,500\nHello.","1 candidate; 1 output cue; no warning"
+"Missing timing arrow","1\n00:00:01,000 00:00:02,500\nHello.","No SRT cues were found. The file needs timestamp lines such as 00:00:01,000 --> 00:00:02,500."
+"Period instead of comma","1\n00:00:01.000 --> 00:00:02.500\nHello.","Cue 1 has invalid timing or no text and was skipped."
+"End before start","1\n00:00:02,500 --> 00:00:01,000\nHello.","Cue 1 has invalid timing or no text and was skipped."
+"Empty subtitle text","Valid timecode, followed by no text | 1\n00:00:01,000 --> 00:00:02,500\n","Cue 1 has invalid timing or no text and was skipped."
+
